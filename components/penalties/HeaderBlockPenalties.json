@@ -33,10 +33,10 @@
         },
         {
           "BlockType": "text",
-          "Source": "<{Penalty.Session.Track.CircuitName, Converter=StringToUpperString}> GRAND PRIX",
+          "Source": "[{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
           "FontName": "{TTRLFontBold}",
           "FontSize": "{HeaderTrackFontSize}",
-          "Foreground": "{LeagueGold}",
+          "Foreground": "{Season.MainLeagueCategory.Color}",
           "HorizontalAlignment": "Center"
         }
       ]
