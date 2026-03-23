@@ -8,13 +8,13 @@
   "Items": [
     {
       "BlockType": "stack",
-      "Width": 300,
+      "Width": 300,Update HeaderBlockEventPenalties to use LeagueGold foreground for track name
       "HorizontalAlignment": "Left",
       "VerticalAlignment": "Center",
       "Items": [
         {
           "BlockType": "image",
-          "Height": "150",
+          "Height": 150,
           "Source": "images/logotypes/FiA.png"
         }
       ]
@@ -27,31 +27,17 @@
       "Items": [
         {
           "BlockType": "image",
-          "Height": "100",
+          "Height": 100,
           "HorizontalAlignment": "Center",
           "Source": "images/TTRL.2025.jpg"
         },
         {
           "BlockType": "text",
-          "Source": "{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX",
+          "Source": "<{Penalty.Session.Track.CircuitName, Converter=StringToUpperString}> GRAND PRIX",
           "FontName": "{TTRLFontBold}",
           "FontSize": "{HeaderTrackFontSize}",
-          "Foreground": "#FF00FF",
+          "Foreground": "{LeagueGold}",
           "HorizontalAlignment": "Center"
-        }
-      ]
-    },
-    {
-      "BlockType": "stack",
-      "Width": 300,
-      "HorizontalAlignment": "Right",
-      "VerticalAlignment": "Center",
-      "Items": [
-        {
-          "BlockType": "image",
-          "Height": "80",
-          "HorizontalAlignment": "Right",
-          "Source": "images/logotypes/f1_logo.png"
         }
       ]
     }
