@@ -1,101 +1,62 @@
 {
     "ComponentName": "HeaderBlockPenalties",
     "VerticalAlignment": "Center",
-    "HorizontalAlignment":"Center",
-    "MarginLeft": 10,
-    "MarginTop" : 25,
+    "HorizontalAlignment": "Center",
+    "MarginTop": 40,
     "BlockType": "stack",
     "Orientation": "Horizontal",
     "Items": [
-        //headerLeft
+        // FIA Logo (Left)
         {
             "BlockType": "stack",
-            "Orientation": "Vertical",
-            "Spacing": -10,
+            "Width": 300,
             "HorizontalAlignment": "Left",
-            "VerticalAlignment":"Center",
+            "VerticalAlignment": "Center",
             "Items": [
                 {
-                    "Name": "TTRL-logo",
-                    "MarginBottom": 20,
                     "BlockType": "image",
-                    "Height": "175",
-                    "HorizontalAlignment": "Center",
-                    "Source": "logotypes/TTRL.png",
+                    "Height": "150",
+                    "Source": "images/logotypes/FiA.png"
                 }
             ]
         },
-        //headerCenter
+        // Center Section: TTRL Logo + Track Name
         {
-            "BlockType": "stack",
+            "BlockType": "stack",Redesign header: FIA, TTRL, F1 logos and Track name
             "Orientation": "Vertical",
-            "Spacing": -10,
-            "MarginTop" :25,
+            "Spacing": 20,
             "HorizontalAlignment": "Center",
             "Items": [
                 {
-                    "BlockType": "stack",
-                    "VerticalAlignment": "Center",
-                    "HorizontalAlignment" : "Center",
-                    "MarginBottom" : 25,
-                    "Items": [
-                        {
-                            "BlockType": "text",
-                            "VerticalAlignment": "Center",
-                            "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
-                            "FontName": "{TTRLFont}",
-                            "FontSize": "75",
-                            "Foreground": "#C9A84C",                        }
-                    ]
-                },
-                //second line
-                {
-                    "BlockType": "stack",
-                    "VerticalAlignment": "Center",
-                    "HorizontalAlignment" : "Center",
-                    "Items": [
-                        {
-                            "BlockType": "text",
-                            //"Foreground": "{Black}",
-                            "FontSize": "{100}",
-                            "FontName": "{TTRLFontBold}",
-                            "Foreground": "{Season.MainLeagueCategory.Color}",
-                            "Source": "[{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
-                        }
-                    ]
-                },
-            ]
-        },
-        //headerRight
-        {
-            "BlockType": "stack",
-            "Orientation": "Vertical",
-            "Spacing": -10,
-            "HorizontalAlignment": "Center",
-            "VerticalAlignment":"Center",
-            "MarginLeft" :10,
-            "Items": [
-                {
-                    "Name": "f1-logo",
-                    "MarginBottom": 20,
                     "BlockType": "image",
-                    "Height": "75",
-                    "HorizontalAlignment": "Right",
-                    "Source": "logotypes/f1_logo.png",
-
+                    "Height": "100",
+                    "HorizontalAlignment": "Center",
+                    "Source": "images/TTRL.2025.jpg"
                 },
-                //{
-                    //"Name": "LeagueLogo",
-                    //"MarginBottom": 20,
-                    //"BlockType": "image",
-                    //"Height": "{g4}",
-                    //"Width": "auto",
-                    //"HorizontalAlignment": "Left",
-                    //"Source": "{Season.LeagueInfo.LeagueLogo}",
-                //},
-                //league name
-
+                {
+                    "BlockType": "text",
+                    "Source": "{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX",
+                    "FontName": "{TTRLFontBold}",
+                    "FontSize": "{HeaderTrackFontSize}",
+                    "Foreground": "#FF00FF", // Pink as in screenshot
+                    "HorizontalAlignment": "Center"
+                }
             ]
         },
+        // F1 Logo (Right)
+        {
+            "BlockType": "stack",
+            "Width": 300,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Height": "80",
+                    "HorizontalAlignment": "Right",
+                    "Source": "images/logotypes/f1_logo.png"
+                }
+            ]
+        }
     ]
 }
