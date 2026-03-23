@@ -16,12 +16,12 @@
             "VerticalAlignment":"Center",
             "Items": [
                 {
-                    "Name": "FiA-logo",
+                    "Name": "TTRL-logo",
                     "MarginBottom": 20,
                     "BlockType": "image",
                     "Height": "175",
                     "HorizontalAlignment": "Center",
-                    "Source": "logotypes/FiA.png",
+                    "Source": "logotypes/TTRL.png",
                 }
             ]
         },
@@ -43,10 +43,9 @@
                             "BlockType": "text",
                             "VerticalAlignment": "Center",
                             "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
-                            "FontName": "{FIAFont}",
+                            "FontName": "{TTRLFont}",
                             "FontSize": "75",
-                            "Foreground": "{Black}",
-                        }
+                            "Foreground": "#C9A84C",                        }
                     ]
                 },
                 //second line
@@ -59,7 +58,7 @@
                             "BlockType": "text",
                             //"Foreground": "{Black}",
                             "FontSize": "{100}",
-                            "FontName": "{FIAFontBold}",
+                            "FontName": "{TTRLFontBold}",
                             "Foreground": "{Season.MainLeagueCategory.Color}",
                             "Source": "[{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
                         }
