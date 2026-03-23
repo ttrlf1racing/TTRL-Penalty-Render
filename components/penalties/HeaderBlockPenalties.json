@@ -1,62 +1,59 @@
 {
-    "ComponentName": "HeaderBlockPenalties",
-    "VerticalAlignment": "Center",
-    "HorizontalAlignment": "Center",
-    "MarginTop": 40,
-    "BlockType": "stack",
-    "Orientation": "Horizontal",
-    "Items": [
-        // FIA Logo (Left)
+  "ComponentName": "HeaderBlockPenalties",
+  "VerticalAlignment": "Center",
+  "HorizontalAlignment": "Center",
+  "MarginTop": 40,
+  "BlockType": "stack",
+  "Orientation": "Horizontal",
+  "Items": [
+    {
+      "BlockType": "stack",
+      "Width": 300,
+      "HorizontalAlignment": "Left",
+      "VerticalAlignment": "Center",
+      "Items": [
         {
-            "BlockType": "stack",
-            "Width": 300,
-            "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center",
-            "Items": [
-                {
-                    "BlockType": "image",
-                    "Height": "150",
-                    "Source": "images/logotypes/FiA.png"
-                }
-            ]
-        },
-        // Center Section: TTRL Logo + Track Name
-        {
-            "BlockType": "stack",Redesign header: FIA, TTRL, F1 logos and Track name
-            "Orientation": "Vertical",
-            "Spacing": 20,
-            "HorizontalAlignment": "Center",
-            "Items": [
-                {
-                    "BlockType": "image",
-                    "Height": "100",
-                    "HorizontalAlignment": "Center",
-                    "Source": "images/TTRL.2025.jpg"
-                },
-                {
-                    "BlockType": "text",
-                    "Source": "{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX",
-                    "FontName": "{TTRLFontBold}",
-                    "FontSize": "{HeaderTrackFontSize}",
-                    "Foreground": "#FF00FF", // Pink as in screenshot
-                    "HorizontalAlignment": "Center"
-                }
-            ]
-        },
-        // F1 Logo (Right)
-        {
-            "BlockType": "stack",
-            "Width": 300,
-            "HorizontalAlignment": "Right",
-            "VerticalAlignment": "Center",
-            "Items": [
-                {
-                    "BlockType": "image",
-                    "Height": "80",
-                    "HorizontalAlignment": "Right",
-                    "Source": "images/logotypes/f1_logo.png"
-                }
-            ]
+          "BlockType": "image",
+          "Height": "150",
+          "Source": "images/logotypes/FiA.png"
         }
-    ]
+      ]
+    },
+    {
+      "BlockType": "stack",
+      "Orientation": "Vertical",
+      "Spacing": 20,
+      "HorizontalAlignment": "Center",
+      "Items": [
+        {
+          "BlockType": "image",
+          "Height": "100",
+          "HorizontalAlignment": "Center",
+          "Source": "images/TTRL.2025.jpg"
+        },
+        {
+          "BlockType": "text",
+          "Source": "{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX",
+          "FontName": "{TTRLFontBold}",
+          "FontSize": "{HeaderTrackFontSize}",
+          "Foreground": "#FF00FF",
+          "HorizontalAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "BlockType": "stack",
+      "Width": 300,
+      "HorizontalAlignment": "Right",
+      "VerticalAlignment": "Center",
+      "Items": [
+        {
+          "BlockType": "image",
+          "Height": "80",
+          "HorizontalAlignment": "Right",
+          "Source": "images/logotypes/f1_logo.png"
+        }
+      ]
+    }
+  ]
 }
