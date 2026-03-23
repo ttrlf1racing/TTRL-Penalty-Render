@@ -3,8 +3,8 @@
     "FontNameWide": "Formula1-Wide",
     "FontNameBold": "Formula1-Bold",
     "FontSizeDefault": 20,
-    "ForegroundDefault": "#FFAFAFAF",
-    "BackgroundDefault": "#74101010",
+    "ForegroundDefault": "#F0F0F0",
+    "BackgroundDefault": "#0D0D1A",
 
     //margins
     "MarginRoot": "64, 40, 48, 40",
@@ -37,18 +37,17 @@
     "SeasonProgressPointsFastestLapForeground": "#C719C7",
     "SeasonProgressPointsPoleBackground": "#420012",
 
-
-    //hines added
+    //TTRL theme vars
     "FIAFontSize": "28",
-    "FIAText": "#000000",
-    "FIALine": "#000000",
-    "FIAGrandPrix": "#ff1801",
+    "FIAText": "#F0F0F0",
+    "FIALine": "#C9A84C",
+    "FIAGrandPrix": "#C0132B",
     "FIAMarginDetailsArea": "50,0,50,0",
-    "FIALeftBlockWidth" : "290",
-    "FIARightBlockWidth" : "1500",
-    "FIAFont": "Formula1-Regular",
-    "FIAFontWide": "Formula1-Wide",
-    "FIAFontBold" :"Formula1-Bold",
-    "PenaltySeparator": "#000000",
-    "FIABGColor" : "#09FFFFFF"
+    "FIALeftBlockWidth": "290",
+    "FIARightBlockWidth": "1500",
+    "FIAFont": "Titillium Web",
+    "FIAFontWide": "Titillium Web",
+    "FIAFontBold": "Formula1-Bold",
+    "PenaltySeparator": "#C9A84C",
+    "FIABGColor": "#0D0D1A"
 }
