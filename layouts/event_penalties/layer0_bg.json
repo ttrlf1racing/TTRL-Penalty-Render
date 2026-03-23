@@ -1,13 +1,15 @@
 {
-    "BlockRoot": {
-        "Name": "root",
-        "BlockType": "stack",
-        "Items": [
-            {
-                "Name": "bg",
-                "BlockType": "image", 
-                "Source": "bg.png"
-            }
-        ]
-    }
+  "BlockRoot": {
+    "Name": "root",
+    "BlockType": "stack",
+    "Background": "#0D0D1A",
+    "Items": [
+      {
+        "Name": "bg",
+        "BlockType": "image",
+        "Source": "bg.png",
+        "RenderIf": "false" // Disable old background image
+      }
+    ]
+  }
 }
