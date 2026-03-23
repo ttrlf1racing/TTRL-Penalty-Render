@@ -1,0 +1,130 @@
+{
+  "ComponentName": "fia_penalty_item_team",
+  "BlockType": "stack",
+  "Padding": "0,0,0,0",
+  "Orientation": "Vertical",
+  "Spacing": 0,
+  "Items": [
+    {
+      "BlockType": "stack",
+      "Background": "#FFFFFF",
+      "Padding": "60,60,60,60",
+      "Orientation": "Vertical",
+      "Items": [
+        // Red Accent Bar
+        {
+          "BlockType": "stack",
+          "Background": "#C0132B",
+          "Height": 12,
+          "MarginBottom": 40
+        },
+        // Header info
+        {
+          "BlockType": "stack",
+          "Orientation": "Horizontal",
+          "MarginBottom": 30,
+          "Items": [
+            {
+              "BlockType": "text",
+              "Source": "PENALTY #<{Penalty.PenaltyId}>",
+              "FontName": "Arial",
+              "FontSize": 32,
+              "Foreground": "#C9A84C"
+            },
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.Date, Converter=DateToDayOfMonth}> <{Penalty.Date, Converter=DateToMonthInWords}>",
+              "FontName": "Arial",
+              "FontSize": 32,
+              "Foreground": "#888888",
+              "HorizontalAlignment": "Right"
+            }
+          ]
+        },
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.Offense, Converter=StringToUpperString}>",
+          "FontName": "Arial",
+          "FontSize": 48,
+          "Foreground": "#000000",
+          "MarginBottom": 10
+        },
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.Session.SessionType}> - <{Penalty.Session.Track.CircuitName}>",
+          "FontName": "Arial",
+          "FontSize": 36,
+          "Foreground": "#C9A84C",
+          "MarginBottom": 10
+        },
+        {
+          "BlockType": "text",
+          "Source": "COMPETITOR: <{Penalty.Team.FullName}>",
+          "FontName": "Arial",
+          "FontSize": 36,
+          "Foreground": "#444444",
+          "MarginBottom": 40
+        },
+        {
+          "BlockType": "stack",
+          "Orientation": "Horizontal",
+          "MarginBottom": 40,
+          "Items": [
+            {
+              "BlockType": "text",
+              "Source": "DECISION: ",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#C0132B"
+            },
+            {
+              "BlockType": "text",
+              "RenderIf": "{Penalty.PenaltySeconds, Converter=NotZero}",
+              "Source": "• <{Penalty.PenaltySeconds}> SEC ",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
+            },
+            {
+              "BlockType": "text",
+              "RenderIf": "{Penalty.PenaltyPoints, Converter=NotZero}",
+              "Source": "• <{Penalty.PenaltyPoints}> PTS ",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
+            },
+            {Add fia_penalty_item_team component for team-specific penalties
+              "BlockType": "text",
+              "RenderIf": "{Penalty.IsNoPunishment}",
+              "Source": "NO FURTHER ACTION",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
+            }
+          ]
+        },
+        {
+          "BlockType": "text",
+          "Source": "VERDICT",
+          "FontName": "Arial",
+          "FontSize": 32,
+          "Foreground": "#C9A84C",
+          "MarginBottom": 10
+        },
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.Verdict}>",
+          "FontName": "Arial",
+          "FontSize": 36,
+          "Foreground": "#444444",
+          "MaxWidth": 2800,
+          "TextOptions.Wrap": true
+        },
+        {
+          "BlockType": "stack",
+          "Height": 40
+        }
+      ]
+    }
+  ]
+}
