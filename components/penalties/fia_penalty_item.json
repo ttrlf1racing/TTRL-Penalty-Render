@@ -7,152 +7,123 @@
   "Items": [
     {
       "BlockType": "stack",
-      "Background": "#0D0D1A",
-      "Padding": "40,40,40,40",
+      "Background": "#FFFFFF",
+      "Padding": "80,80,80,80",
       "Orientation": "Vertical",
       "Items": [
-        // Top Header Row: TTRL Red Bar
+        // Top Red Bar
         {
           "BlockType": "stack",
           "Background": "#C0132B",
-          "Height": 12,
-          "MarginBottom": 30
+          "Height": 20,
+          "MarginBottom": 60
         },
-        // Meta Info (Doc # and Date)
+        // Meta Info
         {
           "BlockType": "stack",
           "Orientation": "Horizontal",
-          "MarginBottom": 20,
+          "MarginBottom": 40,
           "Items": [
             {
               "BlockType": "text",
               "Source": "DOCUMENT #<{Penalty.PenaltyId}>",
-              "FontName": "{FIAFontBold}",
-              "FontSize": 24,
+              "FontName": "Arial",
+              "FontSize": 36,
               "Foreground": "#C9A84C"
             },
             {
               "BlockType": "text",
               "Source": "<{Penalty.Date, Converter=DateToDayOfMonth}> <{Penalty.Date, Converter=DateToMonthInWords}> <{Penalty.Date, Converter=DateToYear}>",
-              "FontName": "{FIAFont}",
-              "FontSize": 24,
+              "FontName": "Arial",
+              "FontSize": 36,
               "Foreground": "#888888",
               "HorizontalAlignment": "Right"
             }
           ]
         },
-        // Primary Title
+        // Verdict Title
         {
           "BlockType": "text",
           "Source": "OFFICIAL STEWARDS VERDICT",
-          "FontName": "{FIAFontBold}",
-          "FontSize": 48,
-          "Foreground": "#F0F0F0",
-          "MarginBottom": 10
+          "FontName": "Arial",
+          "FontSize": 72,
+          "Foreground": "#111111",
+          "MarginBottom": 20
         },
         {
           "BlockType": "text",
           "Source": "<{Penalty.Session.SessionType}> - <{Penalty.Offense}>",
-          "FontName": "{FIAFont}",
-          "FontSize": 32,
+          "FontName": "Arial",
+          "FontSize": 48,
           "Foreground": "#C9A84C",
-          "MarginBottom": 40
+          "MarginBottom": 60
         },
-        // Gold Divider
+        // Grid Details
         {
           "BlockType": "stack",
-          "Background": "#C9A84C",
-          "Height": 2,
-          "MarginBottom": 40
-        },
-        // Details Grid Replacement (Vertical Stack for better mobile/discord viewing)
-        {
-          "BlockType": "stack",
-          "Spacing": 24,
+          "Spacing": 40,
           "Items": [
-            // Driver Row
             {
-              "BlockType": "stack",
-              "Orientation": "Horizontal",
+              "BlockType": "stack", "Orientation": "Horizontal",
               "Items": [
-                { "BlockType": "text", "Source": "DRIVER", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#C0132B", "Width": 250 },
-                { "BlockType": "text", "Source": "#<{Penalty.Driver.RaceNumber}> <{Penalty.Driver.Name}>", "FontName": "{FIAFont}", "FontSize": 24, "Foreground": "#F0F0F0" }
+                { "BlockType": "text", "Source": "DRIVER", "FontName": "Arial", "FontSize": 36, "Foreground": "#C0132B", "Width": 400 },
+                { "BlockType": "text", "Source": "#<{Penalty.Driver.RaceNumber}> <{Penalty.Driver.Name}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" }
               ]
             },
-            // Competitor Row
             {
-              "BlockType": "stack",
-              "Orientation": "Horizontal",
+              "BlockType": "stack", "Orientation": "Horizontal",
               "Items": [
-                { "BlockType": "text", "Source": "COMPETITOR", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#C0132B", "Width": 250 },
-                { "BlockType": "text", "Source": "<{Penalty.Team.FullName}>", "FontName": "{FIAFont}", "FontSize": 24, "Foreground": "#F0F0F0" }
+                { "BlockType": "text", "Source": "COMPETITOR", "FontName": "Arial", "FontSize": 36, "Foreground": "#C0132B", "Width": 400 },
+                { "BlockType": "text", "Source": "<{Penalty.Team.FullName}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" }
               ]
             },
-            // Decision Row
             {
-              "BlockType": "stack",
-              "Orientation": "Horizontal",
+              "BlockType": "stack", "Orientation": "Horizontal",
               "Items": [
-                { "BlockType": "text", "Source": "DECISION", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#C0132B", "Width": 250 },
+                { "BlockType": "text", "Source": "DECISION", "FontName": "Arial", "FontSize": 36, "Foreground": "#C0132B", "Width": 400 },
                 {
                   "BlockType": "stack",
-                  "Orientation": "Vertical",
                   "Items": [
-                    { "BlockType": "text", "Source": "<{Penalty.PenaltySeconds}>s Time Penalty", "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#F0F0F0" },
-                    { "BlockType": "text", "Source": "<{Penalty.PenaltyPoints}> Penalty Points", "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#F0F0F0" },
-                    { "BlockType": "text", "Source": "No Further Action", "RenderIf": "<{Penalty.IsNoPunishment}>", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#F0F0F0" }
+                    { "BlockType": "text", "Source": "<{Penalty.PenaltySeconds}>s Time Penalty", "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" },
+                    { "BlockType": "text", "Source": "<{Penalty.PenaltyPoints}> Penalty Points", "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" },
+                    { "BlockType": "text", "Source": "No Further Action", "RenderIf": "<{Penalty.IsNoPunishment}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" }
                   ]
                 }
               ]
             }
           ]
         },
-        // Verdict Body
+        // Details Paragraph
         {
           "BlockType": "stack",
-          "MarginTop": 50,
-          "Padding": "30,30,30,30",
-          "Background": "#161626",
+          "MarginTop": 80,
           "Items": [
+            { "BlockType": "text", "Source": "DETAILS", "FontName": "Arial", "FontSize": 32, "Foreground": "#C9A84C", "MarginBottom": 20 },
             {
               "BlockType": "text",
-              "Source": "REASONING & VERDICT",
-              "FontName": "{FIAFontBold}",
-              "FontSize": 20,
-              "Foreground": "#C9A84C",
-              "MarginBottom": 15
-            },
-            {
-              "BlockType": "text",
-              "Source": "<{Penalty.Verdict}>",
-              "FontName": "{FIAFont}",
-              "FontSize": 22,
-              "Foreground": "#D0D0D0",
-              "MaxWidth": 1400,
+              "Source": "<{Penalty.Verdict}>", // Using Verdict as proxy for details if no separate field exists, or user can provide
+              "FontName": "Arial",
+              "FontSize": 40,
+              "Foreground": "#333333",
+              "MaxWidth": 2800,
               "TextOptions": { "Wrap": true }
             }
           ]
         },
-        // Footer: The Stewards
+        // Verdict Paragraph
         {
           "BlockType": "stack",
           "MarginTop": 60,
-          "Orientation": "Horizontal",
           "Items": [
+            { "BlockType": "text", "Source": "STEWARDS VERDICT", "FontName": "Arial", "FontSize": 32, "Foreground": "#C9A84C", "MarginBottom": 20 },
             {
               "BlockType": "text",
-              "Source": "THE TTRL STEWARDS",
-              "FontName": "{FIAFontBold}",
-              "FontSize": 20,
-              "Foreground": "#C0132B"
-            },
-            {
-              "BlockType": "text",
-              "Source": "ttrlracing.com",
-              "FontName": "{FIAFont}",
-              "FontSize": 18,
-              "Foreground": "#555555",
-              "HorizontalAlignment": "Right"
+              "Source": "<{Penalty.Verdict}>",
+              "FontName": "Arial",
+              "FontSize": 40,
+              "Foreground": "#333333",
+              "MaxWidth": 2800,
+              "TextOptions": { "Wrap": true }
             }
           ]
         }
