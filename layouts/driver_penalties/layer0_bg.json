@@ -2,12 +2,7 @@
     "BlockRoot": {
         "Name": "root",
         "BlockType": "stack",
-        "Items": [
-            {
-                "Name": "bg",
-                "BlockType": "image", 
-                "Source": "bg.png"
-            }
-        ]
+        "Background": "#0D0D1A",
+        "Items": []
     }
 }
