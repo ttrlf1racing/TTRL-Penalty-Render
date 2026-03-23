@@ -1,28 +1,32 @@
 {
-  "BlockRoot": {
-    "Name": "mainStack",
-    "BlockType": "stack",
-    "Margin": "0, 0, 0, 0",
-    "Background": "#0D0D1A",
-    "Orientation": "Vertical",
-    "Items": [
-      {
-        "BlockType": "itemstack",
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Background": "#FFFFFF",
         "Orientation": "Vertical",
-        "Spacing": 0,
-        "ItemStackOptions": {
-          "ItemSource": "{Penalties.Penalties}",
-          "ItemTemplate": {
-            "BlockType": "component",
-            "Component": "/Penalties/fia_penalty_item",
-            "ComponentOptions": {
-              "Vars": {
-                "Penalty": "Item"
-              }
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "/Penalties/HeaderBlockPenalties"
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 0,
+                "ItemStackOptions": {
+                    "ItemSource": "{Penalties.Penalties}",
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "/Penalties/fia_penalty_item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "Penalty": "Item"
+                            }
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    ]
-  }
+        ]
+    }
 }
