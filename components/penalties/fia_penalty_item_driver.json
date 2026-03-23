@@ -11,14 +11,12 @@
       "Padding": "60,60,60,60",
       "Orientation": "Vertical",
       "Items": [
-        // Red Accent Bar
         {
           "BlockType": "stack",
           "Background": "#C0132B",
           "Height": 12,
           "MarginBottom": 40
         },
-        // Header info
         {
           "BlockType": "stack",
           "Orientation": "Horizontal",
@@ -41,13 +39,12 @@
             }
           ]
         },
-        // Offense
         {
           "BlockType": "text",
           "Source": "<{Penalty.Offense, Converter=StringToUpperString}>",
           "FontName": "Arial",
           "FontSize": 48,
-          "Foreground": "#111111",
+          "Foreground": "#000000",
           "MarginBottom": 10
         },
         {
@@ -58,60 +55,84 @@
           "Foreground": "#C9A84C",
           "MarginBottom": 40
         },
-        // Decision and Verdict
         {
           "BlockType": "stack",
-          "Orientation": "Vertical",
+          "Orientation": "Horizontal",
+          "MarginBottom": 40,
           "Items": [
             {
-              "BlockType": "stack",
-              "Orientation": "Horizontal",
-              "MarginBottom": 30,
-              "Items": [
-                 { "BlockType": "text", "Source": "DECISION:", "FontName": "Arial", "FontSize": 32, "Foreground": "#C0132B", "Width": 250 },
-                 {
-                   "BlockType": "stack",
-                   "Orientation": "Horizontal",
-                   "Spacing": 40,
-                   "Items": [
-                      { "BlockType": "text", "Source": "<{Penalty.PenaltySeconds}>s Penalty", "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 32, "Foreground": "#111111" },
-                      { "BlockType": "text", "Source": "<{Penalty.PenaltyPoints}> Pts", "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 32, "Foreground": "#111111" },
-                      { "BlockType": "text", "Source": "NFA", "RenderIf": "<{Penalty.IsNoPunishment}>", "FontName": "Arial", "FontSize": 32, "Foreground": "#111111" }
-                   ]
-                 }
-              ]
-            },
-            // Heading for Details
-            { "BlockType": "text", "Source": "DETAILS", "FontName": "Arial", "FontSize": 28, "Foreground": "#C9A84C", "MarginBottom": 15 },
-            {
               "BlockType": "text",
-              "Source": "<{Penalty.Verdict}>",
+              "Source": "DECISION: ",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#333333",
-              "MaxWidth": 2800,
-              "TextOptions": { "Wrap": true },
-              "MarginBottom": 40
+              "Foreground": "#C0132B"
             },
-            // Heading for Verdict
-            { "BlockType": "text", "Source": "VERDICT", "FontName": "Arial", "FontSize": 28, "Foreground": "#C9A84C", "MarginBottom": 15 },
             {
               "BlockType": "text",
-              "Source": "<{Penalty.Verdict}>",
+              "RenderIf": "{Penalty.PenaltySeconds, Converter=NotZero}",
+              "Source": "• <{Penalty.PenaltySeconds}> SEC ",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#333333",
-              "MaxWidth": 2800,
-              "TextOptions": { "Wrap": true }
+              "Foreground": "#000000"
+            },
+            {
+              "BlockType": "text",
+              "RenderIf": "{Penalty.PenaltyPoints, Converter=NotZero}",
+              "Source": "• <{Penalty.PenaltyPoints}> PTS ",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
+            },
+            {
+              "BlockType": "text",
+              "RenderIf": "{Penalty.IsNoPunishment}",
+              "Source": "NO FURTHER ACTION",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
             }
           ]
+        },
+        {
+          "BlockType": "text",
+          "Source": "DETAILS",
+          "FontName": "Arial",
+          "FontSize": 32,
+          "Foreground": "#C9A84C",
+          "MarginBottom": 10
+        },
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.Verdict}>",
+          "FontName": "Arial",
+          "FontSize": 36,
+          "Foreground": "#444444",
+          "MaxWidth": 2800,
+          "TextOptions.Wrap": true,
+          "MarginBottom": 40
+        },
+        {
+          "BlockType": "text",
+          "Source": "VERDICT",
+          "FontName": "Arial",
+          "FontSize": 32,
+          "Foreground": "#C9A84C",
+          "MarginBottom": 10
+        },
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.Verdict}>",
+          "FontName": "Arial",
+          "FontSize": 36,
+          "Foreground": "#444444",
+          "MaxWidth": 2800,
+          "TextOptions.Wrap": true
+        },
+        {
+          "BlockType": "stack",
+          "Height": 40
         }
       ]
-    },
-    // Spacing between items
-    {
-       "BlockType": "stack",
-       "Height": 40
     }
   ]
 }
