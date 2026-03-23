@@ -41,7 +41,7 @@
               "FontSize": "{HeaderTrackFontSize}",
               "FontName": "{FIAFontBold}",
               "Foreground": "{Season.MainLeagueCategory.Color}",
-              "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
+              "Source": "[{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
               "HorizontalAlignment": "Center"
             }
           ]
