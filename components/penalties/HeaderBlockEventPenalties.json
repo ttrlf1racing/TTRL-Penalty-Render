@@ -32,12 +32,19 @@
           "Source": "images/TTRL.2025.jpg"
         },
         {
-          "BlockType": "text",
-          "Source": "[{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
-          "FontName": "{TTRLFontBold}",
-          "FontSize": "{HeaderTrackFontSize}",
-          "Foreground": "{Season.MainLeagueCategory.Color}",
-          "HorizontalAlignment": "Center"
+          "BlockType": "stack",
+          "VerticalAlignment": "Center",
+          "HorizontalAlignment": "Center",
+          "Items": [
+            {
+              "BlockType": "text",
+              "FontSize": "{HeaderTrackFontSize}",
+              "FontName": "{FIAFontBold}",
+              "Foreground": "{Season.MainLeagueCategory.Color}",
+              "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
+              "HorizontalAlignment": "Center"
+            }
+          ]
         }
       ]
     }
