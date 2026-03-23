@@ -7,35 +7,35 @@
   "Items": [
     {
       "BlockType": "stack",
-      "Background": "#0D0D1A",
-      "Padding": "30,30,30,30",
+      "Background": "#FFFFFF",
+      "Padding": "60,60,60,60",
       "Orientation": "Vertical",
       "Items": [
         // Red Accent Bar
         {
           "BlockType": "stack",
           "Background": "#C0132B",
-          "Height": 8,
-          "MarginBottom": 20
+          "Height": 12,
+          "MarginBottom": 40
         },
         // Header info
         {
           "BlockType": "stack",
           "Orientation": "Horizontal",
-          "MarginBottom": 15,
+          "MarginBottom": 30,
           "Items": [
             {
               "BlockType": "text",
               "Source": "PENALTY #<{Penalty.PenaltyId}>",
-              "FontName": "{FIAFontBold}",
-              "FontSize": 20,
+              "FontName": "Arial",
+              "FontSize": 32,
               "Foreground": "#C9A84C"
             },
             {
               "BlockType": "text",
               "Source": "<{Penalty.Date, Converter=DateToDayOfMonth}> <{Penalty.Date, Converter=DateToMonthInWords}>",
-              "FontName": "{FIAFont}",
-              "FontSize": 20,
+              "FontName": "Arial",
+              "FontSize": 32,
               "Foreground": "#888888",
               "HorizontalAlignment": "Right"
             }
@@ -45,25 +45,18 @@
         {
           "BlockType": "text",
           "Source": "<{Penalty.Offense, Converter=StringToUpperString}>",
-          "FontName": "{FIAFontBold}",
-          "FontSize": 32,
-          "Foreground": "#F0F0F0",
-          "MarginBottom": 5
+          "FontName": "Arial",
+          "FontSize": 48,
+          "Foreground": "#111111",
+          "MarginBottom": 10
         },
         {
           "BlockType": "text",
           "Source": "<{Penalty.Session.SessionType}> - <{Penalty.Session.Track.CircuitName}>",
-          "FontName": "{FIAFont}",
-          "FontSize": 24,
+          "FontName": "Arial",
+          "FontSize": 36,
           "Foreground": "#C9A84C",
-          "MarginBottom": 25
-        },
-        // Divider
-        {
-          "BlockType": "stack",
-          "Background": "#333333",
-          "Height": 1,
-          "MarginBottom": 25
+          "MarginBottom": 40
         },
         // Decision and Verdict
         {
@@ -71,30 +64,44 @@
           "Orientation": "Vertical",
           "Items": [
             {
-              "BlockType": "stack",Modern TTRL Layout for driver penalty items: Dark mode, vertical stack, red accent bar
+              "BlockType": "stack",
               "Orientation": "Horizontal",
-              "MarginBottom": 15,
+              "MarginBottom": 30,
               "Items": [
-                 { "BlockType": "text", "Source": "DECISION:", "FontName": "{FIAFontBold}", "FontSize": 20, "Foreground": "#C0132B", "Width": 150 },
+                 { "BlockType": "text", "Source": "DECISION:", "FontName": "Arial", "FontSize": 32, "Foreground": "#C0132B", "Width": 250 },
                  {
                    "BlockType": "stack",
                    "Orientation": "Horizontal",
-                   "Spacing": 20,
+                   "Spacing": 40,
                    "Items": [
-                      { "BlockType": "text", "Source": "<{Penalty.PenaltySeconds}>s Penalty", "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>", "FontName": "{FIAFontBold}", "FontSize": 20, "Foreground": "#F0F0F0" },
-                      { "BlockType": "text", "Source": "<{Penalty.PenaltyPoints}> Pts", "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>", "FontName": "{FIAFontBold}", "FontSize": 20, "Foreground": "#F0F0F0" },
-                      { "BlockType": "text", "Source": "NFA", "RenderIf": "<{Penalty.IsNoPunishment}>", "FontName": "{FIAFontBold}", "FontSize": 20, "Foreground": "#F0F0F0" }
+                      { "BlockType": "text", "Source": "<{Penalty.PenaltySeconds}>s Penalty", "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 32, "Foreground": "#111111" },
+                      { "BlockType": "text", "Source": "<{Penalty.PenaltyPoints}> Pts", "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 32, "Foreground": "#111111" },
+                      { "BlockType": "text", "Source": "NFA", "RenderIf": "<{Penalty.IsNoPunishment}>", "FontName": "Arial", "FontSize": 32, "Foreground": "#111111" }
                    ]
                  }
               ]
             },
+            // Heading for Details
+            { "BlockType": "text", "Source": "DETAILS", "FontName": "Arial", "FontSize": 28, "Foreground": "#C9A84C", "MarginBottom": 15 },
             {
               "BlockType": "text",
               "Source": "<{Penalty.Verdict}>",
-              "FontName": "{FIAFont}",
-              "FontSize": 18,
-              "Foreground": "#D0D0D0",
-              "MaxWidth": 1400,
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#333333",
+              "MaxWidth": 2800,
+              "TextOptions": { "Wrap": true },
+              "MarginBottom": 40
+            },
+            // Heading for Verdict
+            { "BlockType": "text", "Source": "VERDICT", "FontName": "Arial", "FontSize": 28, "Foreground": "#C9A84C", "MarginBottom": 15 },
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.Verdict}>",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#333333",
+              "MaxWidth": 2800,
               "TextOptions": { "Wrap": true }
             }
           ]
@@ -104,7 +111,7 @@
     // Spacing between items
     {
        "BlockType": "stack",
-       "Height": 20
+       "Height": 40
     }
   ]
 }
