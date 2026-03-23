@@ -248,7 +248,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             }
                         },
                         {
@@ -260,7 +260,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             }
                         },
                         {
@@ -272,7 +272,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             }
                         }
                     ]
@@ -304,7 +304,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             },
                             "Triggers":
                             [
@@ -361,7 +361,8 @@
                             "Width" : "{FIALeftBlockWidth}"
                         },
                         {
-                            "BlockType": "text",                                  
+                            "BlockType": "text",
+                                                        "MaxWidth": 1400,
                             "Source": "<{Penalty.Offense}> ",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
@@ -370,7 +371,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             },
                         },
                         {
@@ -383,7 +384,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             },
                             "RenderIf" : "<{Penalty.DriversInvolvedString, Converter=EmptyObjectToFalse}>",                            
                         },
@@ -397,7 +398,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             },
                             "RenderIf" : "<{Penalty.Turn, Converter=EmptyObjectToFalse}>",
                         },
@@ -411,7 +412,7 @@
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
-                                "Wrap" : false
+                                "Wrap" : true
                             },
                             "RenderIf" : "<{Penalty.Lap, Converter=EmptyObjectToFalse}>",
                         },
