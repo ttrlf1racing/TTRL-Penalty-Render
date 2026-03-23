@@ -1,617 +1,162 @@
-{   
-    "ComponentName": "fia_penalty_item",
-    "BlockType" : "stack",       
-    "Padding" : "24,12,24,12",
-    "Orientation" : "Vertical",
-    "Spacing" : 16,
-    "Items" :
-    [
-        //separator
+{
+  "ComponentName": "fia_penalty_item",
+  "BlockType": "stack",
+  "Padding": "0,0,0,0",
+  "Orientation": "Vertical",
+  "Spacing": 0,
+  "Items": [
+    {
+      "BlockType": "stack",
+      "Background": "#0D0D1A",
+      "Padding": "40,40,40,40",
+      "Orientation": "Vertical",
+      "Items": [
+        // Top Header Row: TTRL Red Bar
         {
-            "BlockType" : "component",
-            "Component" : "fia_penalty_separator",
-            "RenderIf": "{RenderPenaltySeparator}"
+          "BlockType": "stack",
+          "Background": "#C0132B",
+          "Height": 12,
+          "MarginBottom": 30
         },
-        //Stewards Header
+        // Meta Info (Doc # and Date)
         {
-            "BlockType": "stack",
-            "Orientation": "Horizontal",
-            "Margin" : "{FIAMarginDetailsArea}",
-            "VerticalAlignment": "Center",         
-            "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
-            "Items" :
-            [ 
-
-                        //From/To
-                        {
-                            "Name": "HeaderLeftPart",
-                            "BlockType": "stack",
-                            "VerticalAlignment": "Center",
-                            "HorizontalAlignment": "Left",
-                            "Orientation":"Vertical",
-                            "Spacing": 12,
-                            "Items": [
-                                //From
-                                {
-                                    "BlockType": "stack",
-                                    "VerticalAlignment": "Center",
-                                    "HorizontalAlignment": "Left",
-                                    "Orientation":"Horizontal",
-                                    "Spacing": 12,
-                                    "Items": [
-                                        {
-                                        "Name":"From",
-                                        "BlockType":"text",
-                                        "Source": "[From]",
-                                        "FontName": "{FIAFontBold}",
-                                        "Foreground" : "{FIAText}",                                     
-                                        "FontSize": "{FIAFontSize}",
-                                        "Width" : "{FIALeftBlockWidth}",
-                                        },
-                                        {
-                                            "Name":"From Issuer",
-                                            "BlockType":"text",
-                                            "Source": "<{Penalty.Issuer.Name}>",
-                                            "FontName": "{FIAFont}",
-                                            "Foreground" : "{FIAText}",                                     
-                                            "FontSize": "{FIAFontSize}",
-                                            "Triggers":
-                                            [
-                                                {
-                                                    "Condition" : "<{Penalty.Team.Name, Converter=EmptyObjectToTrue}>",
-                                                    "Property" : "Source",
-                                                    "Value" : "[The Stewards]"
-                                                },
-                                            ]
-                                        },
-                                    ]
-                                },
-                                {
-                                    "BlockType": "stack",
-                                    "VerticalAlignment": "Center",
-                                    "HorizontalAlignment": "Left",
-                                    "Orientation":"Horizontal",
-                                    "Spacing": 12,
-                                    "Items": [
-                                        //To
-                                        {
-                                            "BlockType": "stack",
-                                            "VerticalAlignment": "Center",
-                                            "HorizontalAlignment": "Left",
-                                            "Orientation":"Horizontal",
-                                            "Spacing": 12,
-                                            "Items": [
-                                                {
-                                                "Name":"to",
-                                                "BlockType":"text",
-                                                "Source": "To",
-                                                "FontName": "{FIAFontBold}",
-                                                "Foreground" : "{FIAText}",                                     
-                                                "FontSize": "{FIAFontSize}",
-                                                "Width" : "{FIALeftBlockWidth}",
-                                                },
-                                                {
-                                                "Name":"Team",
-                                                "BlockType":"text",
-                                                "Source": "The Team Manager, <{Penalty.Team.FullName}>",
-                                                "FontName": "{FIAFont}",
-                                                "Foreground" : "{FIAText}",                                     
-                                                "FontSize": "{FIAFontSize}",
-                                                "Triggers":
-                                                [
-                                                    {
-                                                        "Condition" : "<{Penalty.Team.Name, Converter=EmptyObjectToTrue}>",
-                                                        "Property" : "Source",
-                                                        "Value" : "[Reservist]"
-                                                    },
-                                                ]
-                                                },
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                            
-                        //Doc/Date
-                        {
-                            "Name": "HeaderRightPart",
-                            "BlockType": "stack",
-                            "VerticalAlignment": "Center",
-                            "HorizontalAlignment": "Right",
-                            "Orientation":"Vertical",
-                            "MarginLeft": 900,
-                            "Spacing": 12,
-                            "Items": [
-                                //Doc
-                                {
-                                    "BlockType": "stack",
-                                    "VerticalAlignment": "Center",
-                                    "HorizontalAlignment": "Left",
-                                    "Orientation":"Horizontal",
-                                    "Spacing": 12,
-                                    "Items": [
-                                        {
-                                        "Name":"[Doc. #] ",
-                                        "BlockType":"text",
-                                        "Source": "[Doc. #]",
-                                        "FontName": "{FIAFontBold}",
-                                        "Foreground" : "{FIAText}",                                     
-                                        "FontSize": "{FIAFontSize}",
-                                        "Width" : "{FIALeftBlockWidth}",
-                                        },
-                                        {
-                                            "Name":"ID#",
-                                            "BlockType":"text",
-                                            "Source": "<{Penalty.PenaltyId}>",
-                                            "FontName": "{FIAFont}",
-                                            "Foreground" : "{FIAText}",                                     
-                                            "FontSize": "{FIAFontSize}"
-                                        },
-                                    ]
-                                },
-                                //Date
-                                {
-                                    "BlockType": "stack",
-                                    "VerticalAlignment": "Center",
-                                    "HorizontalAlignment": "Left",
-                                    "Orientation":"Horizontal",
-                                    "Spacing": 12,
-                                    "Items": [
-                                        {
-                                        "Name":"Date",
-                                        "BlockType":"text",
-                                        "Source": "[Date]",
-                                        "FontName": "{FIAFontBold}",
-                                        "Foreground" : "{FIAText}",                                     
-                                        "FontSize": "{FIAFontSize}",
-                                        "Width" : "{FIALeftBlockWidth}",
-                                        },
-                                        {
-                                            "Name":"dmy",
-                                            "BlockType":"text",
-                                            "Source": "<{Penalty.Date, Converter=DateToDayOfMonth}>",
-                                            "FontName": "{FIAFont}",
-                                            "Foreground" : "{FIAText}",                                     
-                                            "FontSize": "{FIAFontSize}"
-                                        },
-                                        {
-                                            "Name":"dmy",
-                                            "BlockType":"text",
-                                            "Source": " <{Penalty.Date, Converter=DateToMonthInWords}>",
-                                            "FontName": "{FIAFont}",
-                                            "Foreground" : "{FIAText}",                                     
-                                            "FontSize": "{FIAFontSize}"
-                                        },
-                                        {
-                                            "Name":"dmy",
-                                            "BlockType":"text",
-                                            "Source": " <{Penalty.Date, Converter=DateToYear}>",
-                                            "FontName": "{FIAFont}",
-                                            "Foreground" : "{FIAText}",                                     
-                                            "FontSize": "{FIAFontSize}"
-                                        },
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-        //separator
-        {
-            "BlockType" : "component",
-            "Component" : "fia_penalty_separator",
-            "RenderIf": "{RenderPenaltSeparator}"
-        },
-        {
-            "BlockType": "stack",
-            "Orientation" : "Vertical",
-            "Margin" : "{FIAMarginDetailsArea}",
-            "Spacing": 48,
-            "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
-            "Items" :
-            [
-                //into
-                {
-                    "Name":"Intro",
-                    "BlockType":"text",
-                    "HorizontalAlignment": "Left",
-                    "Source": "The Stewards, having recieved an incident submital, have considered the following matter and determine the following:",
-                    "FontName": "{FIAFont}",
-                    "Foreground" : "{FIAText}",                                     
-                    "FontSize": "{FIAFontSize}"
-                },
-                //Event
-
-                //Driver
-                {
-                    "BlockType": "stack",
-                    "Orientation" : "Horizontal",
-                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
-                    "Items" :
-                    [
-                        {
-                            "BlockType": "text",                   
-                            "Source" : "[No / Driver]",
-                            "Width" : "{FIALeftBlockWidth}",                          
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFontBold}",
-                            "Foreground" : "{FIAText}",                                     
-                            "FontSize": "{FIAFontSize}"
-                        },
-                        {
-                            "BlockType": "text",                          
-                            "Source": "<{Penalty.Driver.RaceNumber}>",                    
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            }
-                        },
-                        {
-                            "BlockType": "text",                          
-                            "Source": " [/] ",                    
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            }
-                        },
-                        {
-                            "BlockType": "text",                          
-                            "Source": " <{Penalty.Driver.Name}>",                    
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            }
-                        }
-                    ]
-                },
-                //Competitor
-                {
-                    "BlockType": "stack",
-                    "Orientation" : "Horizontal",
-                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
-                    "Items" :
-                    [
-                        {
-                            "BlockType": "text",                   
-                            "Source" : "[Competitor]",
-                            "Width" : "{FIALeftBlockWidth}",                             
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFontBold}",
-                            "Foreground" : "{FIAText}",                                     
-                            "FontSize": "{FIAFontSize}"
-                        },
-
-                        {
-                            "BlockType": "text",                          
-                            "Source": "<{Penalty.Team.FullName}>",                    
-                            "HorizontalAlignment": "Left",
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            },
-                            "Triggers":
-                            [
-                                {
-                                    "Condition" : "<{Penalty.Team.Name, Converter=EmptyObjectToTrue}>",
-                                    "Property" : "Source",
-                                    "Value" : "[Reservist]"
-                                },
-                            ]
-                        }
-                    ]
-                },
-                //Session
-                {
-                    "BlockType": "stack",
-                    "Orientation" : "Horizontal",
-                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
-                    "Items" :
-                    [
-                        {
-                            "BlockType": "text",                   
-                            "Source" : "[Session]",
-                            "FontName": "{FIAFontBold}",
-                            "Foreground" : "{FIAText}",                                     
-                            "FontSize": "{FIAFontSize}",
-                            "Width" : "{FIALeftBlockWidth}"
-                        },
-                        {
-                            "BlockType": "text",                                  
-                            "Source": "<{Penalty.Session.SessionType}>",                    
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            }
-                        }
-                    ]
-                },
-                //Offence
-                {
-                    "BlockType": "stack",
-                    "Orientation" : "Horizontal",
-                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
-                    "Items" :
-                    [
-                        {
-                            "BlockType": "text",                   
-                            "Source" : "[Offence]",
-                            "FontName": "{FIAFontBold}",
-                            "Foreground" : "{FIAText}",                                     
-                            "FontSize": "{FIAFontSize}",
-                            "Width" : "{FIALeftBlockWidth}"
-                        },
-                        {
-                            "BlockType": "text",
-                                                        "MaxWidth": 1400,
-                            "Source": "<{Penalty.Offense}> ",                    
-                            "HorizontalAlignment": "Left",
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            },
-                        },
-                        {
-                            "BlockType": "text",                               
-                            "Source": " [involvingdriver(s)] <{Penalty.DriversInvolvedString}> ",                    
-                            "HorizontalAlignment": "Left",
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            },
-                            "RenderIf" : "<{Penalty.DriversInvolvedString, Converter=EmptyObjectToFalse}>",                            
-                        },
-                        {
-                            "BlockType": "text",                                
-                            "Source": " [in turn] <{Penalty.Turn}> ",                    
-                            "HorizontalAlignment": "Left",
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            },
-                            "RenderIf" : "<{Penalty.Turn, Converter=EmptyObjectToFalse}>",
-                        },
-                        {
-                            "BlockType": "text",                           
-                            "Source": " [on lap] <{Penalty.Lap}>",                    
-                            "HorizontalAlignment": "Left",
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
-                            "Foreground" : "{FIAText}",                   
-                           "FontSize": "{FIAFontSize}",
-                            "TextOptions" : 
-                            {
-                                "Wrap" : true
-                            },
-                            "RenderIf" : "<{Penalty.Lap, Converter=EmptyObjectToFalse}>",
-                        },
-                    ]
-                },
-                //Decision
-                {
-                    "BlockType": "stack",
-                    "Orientation" : "Horizontal",
-                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
-                    "Items" :
-                    [
-                        {
-                            "BlockType": "text",                   
-                            "Source" : "[Decision]",                               
-                            "HorizontalAlignment": "Left",
-                            "VerticalAlignment": "Top",
-                            "FontName": "{FIAFontBold}",
-                            "Foreground" : "{FIAText}",                                     
-                            "FontSize": "{FIAFontSize}",
-                            "Width" : "{FIALeftBlockWidth}"
-                        },
-                        {
-                            "BlockType": "stack",
-                            "VerticalAlignment": "Center",
-                            "HorizontalAlignment": "Left",
-                            "Orientation":"Vertical",
-                            "Items": [
-                                            //pen. time
-                                            {
-                                                "BlockType": "text",                               
-                                                "Source": "<{Penalty.PenaltySeconds, Converter=NumberToSignedString}> sec. time penalty",
-                                                "RenderIf" : "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "FontName": "{FIAFont}",
-                                                "Foreground" : "{FIAText}",
-                                                "FontSize": "{FIAFontSize}"
-                                            },
-
-                                            //pen. pos
-                                            {
-                                                "BlockType": "text",                                
-                                                "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> position grid drop",
-                                                "RenderIf" : "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "FontName": "{FIAFont}",
-                                                "Foreground" : "{FIAText}",
-                                                "FontSize": "{FIAFontSize}"
-                                            },
-                                            //pp
-                                            {
-                                                "BlockType": "text",                                   
-                                                "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> penalty point(s)",
-                                                "RenderIf" : "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "FontName": "{FIAFont}",
-                                                "Foreground" : "{FIAText}",
-                                                "FontSize": "{FIAFontSize}"
-                                            },
-                                            //warning
-                                            {
-                                                "BlockType": "text",                                
-                                                "Source": "<{Penalty.PenaltyWarnings, Converter=NumberToSignedString}> warning(s)",
-                                                "RenderIf" : "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "FontName": "{FIAFont}",
-                                                "Foreground" : "{FIAText}",
-                                                "FontSize": "{FIAFontSize}"
-                                            },
-                                            {
-                                                "BlockType": "itemstack",
-                                                "Orientation": "Vertical",
-                                                "VerticalAlignment": "Center",
-                                                "ItemStackOptions": {
-                                                    "ItemSource": "<{Penalty.PenaltyActions}>",
-                                                    "ItemTemplate": {
-                                                        "BlockType": "stack",
-                                                        "Margin": "0,0,0,0",
-                                                        "Orientation": "Horizontal",
-                                                        "VerticalAlignment": "Center",
-                                                        "Items": [
-                                                            {
-                                                                "BlockType": "text",
-                                                                "HorizontalAlignment": "Left",
-                                                                "VerticalAlignment": "Center",
-                                                                "FontName": "{FIAFont}",
-                                                                "Foreground" : "{FIAText}",
-                                                                "FontSize": "{FIAFontSize}",
-                                                                "Source": "{Item.FullTypeAndValueDescription}",
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            },
-                                            //no penalty
-                                            {
-                                                "BlockType": "text",                                   
-                                                "Source": "No Further Action",
-                                                "RenderIf" : "<{Penalty.IsNoPunishment}>",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "FontName": "{FIAFont}",
-                                                "Foreground" : "{FIAText}",
-                                                "Padding" : "16",
-                                                "FontSize": "{FIAFontSize}"
-                                            },
-                                ]        
-                            }
-                        ]
-                    },
-                    //description line
-                    {
-                        "BlockType": "stack",
-                        "Orientation" : "Horizontal",
-                        "RenderIf" : "<{Penalty.Description, Converter=EmptyObjectToFalse}>",
-                        "Items" :
-                        [
-                            {
-                                "BlockType": "text",                   
-                                "Source" : "[Details]",                             
-                                "HorizontalAlignment": "Left",
-                                "VerticalAlignment": "Top",
-                                "FontName": "{FIAFontBold}",
-                                "Foreground" : "{FIAText}",                                     
-                                "FontSize": "{FIAFontSize}",
-                                "Width" : "{FIALeftBlockWidth}"
-                            },
-
-                            {
-                                "BlockType": "text",
-                                "MaxWidth": 1400,                               
-                                "Source": "<{Penalty.Description}>",                    
-                                "HorizontalAlignment": "Left",
-                                "VerticalAlignment": "Top",
-                                "FontName": "{FIAFont}",
-                                "Foreground" : "{FIAText}",                   
-                               "FontSize": "{FIAFontSize}",
-                                "TextOptions" : 
-                                {
-                                    "Wrap" : true
-                                }
-                            }
-                        ]
-                    },
-                    //Decision Reason
-                    {
-                        "BlockType": "stack",
-                        "Orientation" : "Horizontal",
-                        "RenderIf" : "<{Penalty.Verdict, Converter=EmptyObjectToFalse}>",
-                        "Items" :
-                        [
-                            {
-                                "BlockType": "text",                   
-                                "Source" : "[Verdict]",                             
-                                "HorizontalAlignment": "Left",
-                                "VerticalAlignment": "Top",
-                                "FontName": "{FIAFontBold}",
-                                "Foreground" : "{FIAText}",                                     
-                                "FontSize": "{FIAFontSize}",
-                                "Width" : "{FIALeftBlockWidth}"
-                            },
-
-                            {
-                                "BlockType": "text",
-                                "MaxWidth": 1400,                               
-                                "Source": "<{Penalty.Verdict}>",                    
-                                "HorizontalAlignment": "Left",
-                                "VerticalAlignment": "Top",
-                                "FontName": "{FIAFont}",
-                                "Foreground" : "{FIAText}",                   
-                               "FontSize": "{FIAFontSize}",
-                                "TextOptions" : 
-                                {
-                                    "Wrap" : true
-                                }
-                            }
-                        ]
-                    },
-
-                ]
-            },
-            //the stewards
+          "BlockType": "stack",
+          "Orientation": "Horizontal",
+          "MarginBottom": 20,
+          "Items": [
             {
-                "BlockType": "text",                   
-                "Source" : "[The Stewards]",
-                "MarginTop" : 75,
-                "MarginBottom" : 75,
-                "MarginLeft" : 50,
-                "FontName": "{FIAFontBold}",
-                "Foreground" : "{FIAText}",                                     
-                "FontSize": "{FIAFontSize}"
+              "BlockType": "text",
+              "Source": "DOCUMENT #<{Penalty.PenaltyId}>",
+              "FontName": "{FIAFontBold}",
+              "FontSize": 24,
+              "Foreground": "#C9A84C"
             },
-        ]
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.Date, Converter=DateToDayOfMonth}> <{Penalty.Date, Converter=DateToMonthInWords}> <{Penalty.Date, Converter=DateToYear}>",
+              "FontName": "{FIAFont}",
+              "FontSize": 24,
+              "Foreground": "#888888",
+              "HorizontalAlignment": "Right"
+            }
+          ]
+        },
+        // Primary Title
+        {
+          "BlockType": "text",
+          "Source": "OFFICIAL STEWARDS VERDICT",
+          "FontName": "{FIAFontBold}",
+          "FontSize": 48,
+          "Foreground": "#F0F0F0",
+          "MarginBottom": 10
+        },
+        {
+          "BlockType": "text",
+          "Source": "<{Penalty.Session.SessionType}> - <{Penalty.Offense}>",
+          "FontName": "{FIAFont}",
+          "FontSize": 32,
+          "Foreground": "#C9A84C",
+          "MarginBottom": 40
+        },
+        // Gold Divider
+        {
+          "BlockType": "stack",
+          "Background": "#C9A84C",
+          "Height": 2,
+          "MarginBottom": 40
+        },
+        // Details Grid Replacement (Vertical Stack for better mobile/discord viewing)
+        {
+          "BlockType": "stack",
+          "Spacing": 24,
+          "Items": [
+            // Driver Row
+            {
+              "BlockType": "stack",
+              "Orientation": "Horizontal",
+              "Items": [
+                { "BlockType": "text", "Source": "DRIVER", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#C0132B", "Width": 250 },
+                { "BlockType": "text", "Source": "#<{Penalty.Driver.RaceNumber}> <{Penalty.Driver.Name}>", "FontName": "{FIAFont}", "FontSize": 24, "Foreground": "#F0F0F0" }
+              ]
+            },
+            // Competitor Row
+            {
+              "BlockType": "stack",
+              "Orientation": "Horizontal",
+              "Items": [
+                { "BlockType": "text", "Source": "COMPETITOR", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#C0132B", "Width": 250 },
+                { "BlockType": "text", "Source": "<{Penalty.Team.FullName}>", "FontName": "{FIAFont}", "FontSize": 24, "Foreground": "#F0F0F0" }
+              ]
+            },
+            // Decision Row
+            {
+              "BlockType": "stack",
+              "Orientation": "Horizontal",
+              "Items": [
+                { "BlockType": "text", "Source": "DECISION", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#C0132B", "Width": 250 },
+                {
+                  "BlockType": "stack",
+                  "Orientation": "Vertical",
+                  "Items": [
+                    { "BlockType": "text", "Source": "<{Penalty.PenaltySeconds}>s Time Penalty", "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#F0F0F0" },
+                    { "BlockType": "text", "Source": "<{Penalty.PenaltyPoints}> Penalty Points", "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#F0F0F0" },
+                    { "BlockType": "text", "Source": "No Further Action", "RenderIf": "<{Penalty.IsNoPunishment}>", "FontName": "{FIAFontBold}", "FontSize": 24, "Foreground": "#F0F0F0" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        // Verdict Body
+        {
+          "BlockType": "stack",
+          "MarginTop": 50,
+          "Padding": "30,30,30,30",
+          "Background": "#161626",
+          "Items": [
+            {
+              "BlockType": "text",
+              "Source": "REASONING & VERDICT",
+              "FontName": "{FIAFontBold}",
+              "FontSize": 20,
+              "Foreground": "#C9A84C",
+              "MarginBottom": 15
+            },
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.Verdict}>",
+              "FontName": "{FIAFont}",
+              "FontSize": 22,
+              "Foreground": "#D0D0D0",
+              "MaxWidth": 1400,
+              "TextOptions": { "Wrap": true }
+            }
+          ]
+        },
+        // Footer: The Stewards
+        {
+          "BlockType": "stack",
+          "MarginTop": 60,
+          "Orientation": "Horizontal",
+          "Items": [
+            {
+              "BlockType": "text",
+              "Source": "THE TTRL STEWARDS",
+              "FontName": "{FIAFontBold}",
+              "FontSize": 20,
+              "Foreground": "#C0132B"
+            },
+            {
+              "BlockType": "text",
+              "Source": "ttrlracing.com",
+              "FontName": "{FIAFont}",
+              "FontSize": 18,
+              "Foreground": "#555555",
+              "HorizontalAlignment": "Right"
+            }
+          ]
+        }
+      ]
     }
-
-                
-
-        
+  ]
+}
