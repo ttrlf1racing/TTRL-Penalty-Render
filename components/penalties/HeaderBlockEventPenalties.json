@@ -7,6 +7,7 @@
   "BlockType": "stack",
   "Orientation": "Horizontal",
   "Background": "#EEEEEE",
+  "Width": "*",
   "Padding": "20,20,20,20",
   "Items": [
     //headerLeft
@@ -33,6 +34,7 @@
       "Orientation": "Vertical",
       "Spacing": -10,
       "MarginTop" :25,
+      "Width": "*",
       "HorizontalAlignment": "Center",
       "Items": [
         //TTRL Logo
@@ -58,9 +60,9 @@
           "Items": [
             {
               "BlockType": "text",
-              "FontSize": 100,
+              "FontSize": "{HeaderTrackFontSize}",
               "FontName": "{FIAFontBold}",
-              "Foreground": "#111111",
+              "Foreground": "<{Event.League.CategoryColour}>",
               "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]"
             }
           ]
