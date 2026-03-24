@@ -74,7 +74,7 @@
             {
               "BlockType": "text",
               "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
-              "Source": "• <{Penalty.PenaltySeconds}> SEC ",
+              "Source": "\u2022 <{Penalty.PenaltySeconds}> SEC ",
               "FontName": "Arial",
               "FontSize": 36,
               "Foreground": "#000000"
@@ -82,7 +82,7 @@
             {
               "BlockType": "text",
               "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
-              "Source": "• <{Penalty.PenaltyPoints}> PTS ",
+              "Source": "\u2022 <{Penalty.PenaltyPoints}> PTS ",
               "FontName": "Arial",
               "FontSize": 36,
               "Foreground": "#000000"
@@ -117,7 +117,7 @@
               "Source": "<{Penalty.Description}>",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#444444",
+              "Foreground": "#C0132B",
               "Width": "*",
               "TextOptions": { "Wrap": true }
             }
@@ -142,13 +142,16 @@
               "Source": "<{Penalty.Verdict}>",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#444444",
+              "Foreground": "#C0132B",
               "Width": "*",
               "TextOptions": { "Wrap": true }
             }
           ]
         },
-        { "BlockType": "stack", "Height": 40 }
+        {
+          "BlockType": "stack",
+          "Height": 40
+        }
       ]
     }
   ]
