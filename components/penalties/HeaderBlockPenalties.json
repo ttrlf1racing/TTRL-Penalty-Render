@@ -23,7 +23,7 @@
                     "BlockType": "image",
                     "Height": "175",
                     "HorizontalAlignment": "Center",
-                    "Source": "logotypes/FiA.png",
+                    "Source": "logotypes/FiA.png"
                 }
             ]
         },
@@ -46,7 +46,7 @@
                             "BlockType": "image",
                             "Height": "120",
                             "HorizontalAlignment": "Center",
-                            "Source": "images/TTRL.2025 .png",
+                            "Source": "TTRL.2025 .png"
                         }
                     ]
                 },
@@ -61,10 +61,10 @@
                             "FontSize": 100,
                             "FontName": "{FIAFontBold}",
                             "Foreground": "#FFFFFF",
-                            "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
+                            "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]"
                         }
                     ]
-                },
+                }
             ]
         },
         //headerRight
@@ -82,9 +82,9 @@
                     "BlockType": "image",
                     "Height": "75",
                     "HorizontalAlignment": "Right",
-                    "Source": "logotypes/f1_logo.png",
-                },
+                    "Source": "logotypes/f1_logo.png"
+                }
             ]
-        },
+        }
     ]
 }
