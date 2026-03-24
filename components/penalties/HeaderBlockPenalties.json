@@ -57,11 +57,10 @@
                     "Items": [
                         {
                             "BlockType": "text",
-                            //"Foreground": "{Black}",
-                            "FontSize": "{100}",
+                            "FontSize": 100,
                             "FontName": "{FIAFontBold}",
                             "Foreground": "{Season.MainLeagueCategory.Color}",
-                            "Source": "[{Penalty.Session.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
+                            "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
                         }
                     ]
                 },
@@ -83,19 +82,7 @@
                     "Height": "75",
                     "HorizontalAlignment": "Right",
                     "Source": "logotypes/f1_logo.png",
-
                 },
-                //{
-                    //"Name": "LeagueLogo",
-                    //"MarginBottom": 20,
-                    //"BlockType": "image",
-                    //"Height": "{g4}",
-                    //"Width": "auto",
-                    //"HorizontalAlignment": "Left",
-                    //"Source": "{Season.LeagueInfo.LeagueLogo}",
-                //},
-                //league name
-
             ]
         },
     ]
