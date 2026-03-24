@@ -124,7 +124,7 @@
               "Source": "<{Penalty.Verdict}>",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#C0132B",
+                          "Foreground": "#000000",
               "Width": "*",
               "TextOptions": { "Wrap": true }
             }
