@@ -1,5 +1,5 @@
 {
-    "ComponentName": "HeaderBlockPenalties",
+    "ComponentName": "HeaderBlockEventPenalties",
     "VerticalAlignment": "Center",
     "HorizontalAlignment":"Center",
     "MarginLeft": 10,
@@ -37,6 +37,7 @@
                     "BlockType": "stack",
                     "VerticalAlignment": "Center",
                     "HorizontalAlignment" : "Center",
+                    "MarginBottom" : 25,
                     "Items": [
                         {
                             "BlockType": "text",
@@ -56,8 +57,7 @@
                     "Items": [
                         {
                             "BlockType": "text",
-                            "Foreground": "{Black}",
-                            "FontSize": "{100}",
+                            "FontSize": 100,
                             "FontName": "{FIAFontBold}",
                             "Foreground": "{Season.MainLeagueCategory.Color}",
                             "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
@@ -83,18 +83,6 @@
                     "HorizontalAlignment": "Right",
                     "Source": "logotypes/f1_logo.png",
                 },
-                //{
-                    //"Name": "LeagueLogo",
-                    //"MarginBottom": 20,
-                    //"BlockType": "image",
-                    //"Height": "{g4}",
-                    //"Width": "auto",
-                    //"HorizontalAlignment": "Left",
-                    //"Source": "{Season.LeagueInfo.LeagueLogo}",
-                    ////"RenderIf": "{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
-                //},
-                //league name
-
             ]
         },
     ]
