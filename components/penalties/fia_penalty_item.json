@@ -7,7 +7,7 @@
   "Items": [
     {
       "BlockType": "stack",
-      "Background": "#FFFFFF",
+      "Background": "#E8E8E8",
       "Padding": "80,80,80,80",
       "Orientation": "Vertical",
       "Items": [
@@ -58,36 +58,95 @@
           "Foreground": "#C9A84C",
           "MarginBottom": 60
         },
-        // Grid Details
+        // Grid Details - Driver / Team / Decision evenly spaced across page
         {
           "BlockType": "stack",
-          "Spacing": 40,
+          "Orientation": "Horizontal",
+          "MarginBottom": 60,
           "Items": [
+            // Driver column
             {
-              "BlockType": "stack", "Orientation": "Horizontal",
+              "BlockType": "stack",
+              "Orientation": "Vertical",
+              "Width": 900,
               "Items": [
-                { "BlockType": "text", "Source": "DRIVER", "FontName": "Arial", "FontSize": 36, "Foreground": "#C0132B", "Width": 400 },
-                { "BlockType": "text", "Source": "#<{Penalty.Driver.RaceNumber}> <{Penalty.Driver.Name}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" }
-              ]
-            },
-            {
-              "BlockType": "stack", "Orientation": "Horizontal",
-              "Items": [
-                { "BlockType": "text", "Source": "COMPETITOR", "FontName": "Arial", "FontSize": 36, "Foreground": "#C0132B", "Width": 400 },
-                { "BlockType": "text", "Source": "<{Penalty.Team.FullName}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" }
-              ]
-            },
-            {
-              "BlockType": "stack", "Orientation": "Horizontal",
-              "Items": [
-                { "BlockType": "text", "Source": "DECISION", "FontName": "Arial", "FontSize": 36, "Foreground": "#C0132B", "Width": 400 },
                 {
-                  "BlockType": "stack",
-                  "Items": [
-                    { "BlockType": "text", "Source": "<{Penalty.PenaltySeconds}>s Time Penalty", "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" },
-                    { "BlockType": "text", "Source": "<{Penalty.PenaltyPoints}> Penalty Points", "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" },
-                    { "BlockType": "text", "Source": "No Further Action", "RenderIf": "<{Penalty.IsNoPunishment}>", "FontName": "Arial", "FontSize": 36, "Foreground": "#111111" }
-                  ]
+                  "BlockType": "text",
+                  "Source": "DRIVER",
+                  "FontName": "Arial",
+                  "FontSize": 32,
+                  "Foreground": "#C0132B",
+                  "MarginBottom": 8
+                },
+                {
+                  "BlockType": "text",
+                  "Source": "#<{Penalty.Driver.RaceNumber}> <{Penalty.Driver.Name}>",
+                  "FontName": "Arial",
+                  "FontSize": 36,
+                  "Foreground": "#111111"
+                }
+              ]
+            },
+            // Team column
+            {
+              "BlockType": "stack",
+              "Orientation": "Vertical",
+              "Width": 900,
+              "Items": [
+                {
+                  "BlockType": "text",
+                  "Source": "TEAM",
+                  "FontName": "Arial",
+                  "FontSize": 32,
+                  "Foreground": "#C0132B",
+                  "MarginBottom": 8
+                },
+                {
+                  "BlockType": "text",
+                  "Source": "<{Penalty.Team.FullName}>",
+                  "FontName": "Arial",
+                  "FontSize": 36,
+                  "Foreground": "#111111"
+                }
+              ]
+            },
+            // Decision column
+            {
+              "BlockType": "stack",
+              "Orientation": "Vertical",
+              "Width": 900,
+              "Items": [
+                {
+                  "BlockType": "text",
+                  "Source": "DECISION",
+                  "FontName": "Arial",
+                  "FontSize": 32,
+                  "Foreground": "#C0132B",
+                  "MarginBottom": 8
+                },
+                {
+                  "BlockType": "text",
+                  "Source": "<{Penalty.PenaltySeconds}>s Time Penalty",
+                  "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
+                  "FontName": "Arial",
+                  "FontSize": 36,
+                  "Foreground": "#111111"
+                },
+                {
+                  "BlockType": "text",
+                  "Source": "<{Penalty.PenaltyPoints}> Penalty Points",
+                  "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
+                  "FontName": "Arial",
+                  "FontSize": 36,
+                  "Foreground": "#111111"
+                },
+                {
+                  "BlockType": "text",
+                  "Source": "No Further Action",
+                  "RenderIf": "<{Penalty.IsNoPunishment}>",
+                  "FontName": "Arial",
+                  "FontSize": 36,
+                  "Foreground": "#111111"
                 }
               ]
             }
@@ -96,36 +155,67 @@
         // Details Paragraph
         {
           "BlockType": "stack",
-          "MarginTop": 80,
+          "MarginTop": 60,
+          "Orientation": "Vertical",
           "Items": [
-            { "BlockType": "text", "Source": "DETAILS", "FontName": "Arial", "FontSize": 32, "Foreground": "#C9A84C", "MarginBottom": 20 },
             {
               "BlockType": "text",
-              "Source": "<{Penalty.Verdict}>", // Using Verdict as proxy for details if no separate field exists, or user can provide
+              "Source": "DETAILS",
               "FontName": "Arial",
-              "FontSize": 40,
+              "FontSize": 32,
+              "Foreground": "#C9A84C",
+              "HorizontalAlignment": "Left",
+              "MarginBottom": 12
+            },
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.Details}>",
+              "FontName": "Arial",
+              "FontSize": 36,
               "Foreground": "#333333",
+              "HorizontalAlignment": "Left",
               "MaxWidth": 2800,
               "TextOptions": { "Wrap": true }
             }
           ]
         },
-        // Verdict Paragraph
+        // Stewards Verdict Paragraph
         {
           "BlockType": "stack",
           "MarginTop": 60,
+          "Orientation": "Vertical",
           "Items": [
-            { "BlockType": "text", "Source": "STEWARDS VERDICT", "FontName": "Arial", "FontSize": 32, "Foreground": "#C9A84C", "MarginBottom": 20 },
+            {
+              "BlockType": "text",
+              "Source": "STEWARDS VERDICT",
+              "FontName": "Arial",
+              "FontSize": 32,
+              "Foreground": "#C9A84C",
+              "HorizontalAlignment": "Left",
+              "MarginBottom": 12
+            },
             {
               "BlockType": "text",
               "Source": "<{Penalty.Verdict}>",
               "FontName": "Arial",
-              "FontSize": 40,
+              "FontSize": 36,
               "Foreground": "#333333",
+              "HorizontalAlignment": "Left",
               "MaxWidth": 2800,
               "TextOptions": { "Wrap": true }
             }
           ]
+        },
+        //the stewards
+        {
+          "BlockType": "text",
+          "Source": "[FIASignature]",
+          "MarginTop": 75,
+          "MarginBottom": 75,
+          "MarginLeft": 50,
+          "FontName": "{FIAFontBold}",
+          "Foreground": "{FIAText}",
+          "FontSize": "{FIAFontSize}"
         }
       ]
     }
