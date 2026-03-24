@@ -6,6 +6,8 @@
     "MarginTop" : 25,
     "BlockType": "stack",
     "Orientation": "Horizontal",
+    "Background": "#C0132B",
+    "Padding": "20,20,20,20",
     "Items": [
         //headerLeft
         {
@@ -33,23 +35,22 @@
             "MarginTop" :25,
             "HorizontalAlignment": "Center",
             "Items": [
+                //TTRL Logo
                 {
                     "BlockType": "stack",
                     "VerticalAlignment": "Center",
                     "HorizontalAlignment" : "Center",
-                    "MarginBottom" : 25,
+                    "MarginBottom" : 20,
                     "Items": [
                         {
-                            "BlockType": "text",
-                            "VerticalAlignment": "Center",
-                            "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
-                            "FontName": "{FIAFont}",
-                            "FontSize": "75",
-                            "Foreground": "{Black}",
+                            "BlockType": "image",
+                            "Height": "120",
+                            "HorizontalAlignment": "Center",
+                            "Source": "images/TTRL.2025 .png",
                         }
                     ]
                 },
-                //second line
+                //second line - circuit name
                 {
                     "BlockType": "stack",
                     "VerticalAlignment": "Center",
@@ -59,7 +60,7 @@
                             "BlockType": "text",
                             "FontSize": 100,
                             "FontName": "{FIAFontBold}",
-                            "Foreground": "{Season.MainLeagueCategory.Color}",
+                            "Foreground": "#FFFFFF",
                             "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]",
                         }
                     ]
