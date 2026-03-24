@@ -1,6 +1,7 @@
 {
   "ComponentName": "fia_penalty_item_team",
   "BlockType": "stack",
+      "Width": "*",
   "Padding": "0,0,0,0",
   "Orientation": "Vertical",
   "Spacing": 0,
