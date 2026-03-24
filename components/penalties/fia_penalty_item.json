@@ -7,7 +7,7 @@
   "Items": [
     {
       "BlockType": "stack",
-      "Background": "#E8E8E8",
+      "Background": "#C8C8C8",
       "Padding": "80,80,80,80",
       "Orientation": "Vertical",
       "Items": [
@@ -169,12 +169,11 @@
             },
             {
               "BlockType": "text",
-              "Source": "<{Penalty.Details}>",
+              "Source": "<{Penalty.Description}>",
               "FontName": "Arial",
               "FontSize": 36,
               "Foreground": "#333333",
               "HorizontalAlignment": "Left",
-              "MaxWidth": 2800,
               "TextOptions": { "Wrap": true }
             }
           ]
@@ -201,7 +200,6 @@
               "FontSize": 36,
               "Foreground": "#333333",
               "HorizontalAlignment": "Left",
-              "MaxWidth": 2800,
               "TextOptions": { "Wrap": true }
             }
           ]
