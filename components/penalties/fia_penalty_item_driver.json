@@ -7,7 +7,7 @@
   "Items": [
     {
       "BlockType": "stack",
-      "Background": "#C0132B",
+      "Background": "#EEEEEE",
       "Padding": "60,60,60,60",
       "Orientation": "Vertical",
       "Items": [
@@ -99,40 +99,54 @@
         },
         // Details paragraph
         {
-          "BlockType": "text",
-          "Source": "DETAILS",
-          "FontName": "Arial",
-          "FontSize": 32,
-          "Foreground": "#C9A84C",
-          "MarginBottom": 10
-        },
-        {
-          "BlockType": "text",
-          "Source": "<{Penalty.Description}>",
-          "FontName": "Arial",
-          "FontSize": 36,
-          "Foreground": "#444444",
+          "BlockType": "stack",
+          "Orientation": "Vertical",
           "Width": "*",
-          "TextOptions": { "Wrap": true },
-          "MarginBottom": 40
+          "MarginBottom": 40,
+          "Items": [
+            {
+              "BlockType": "text",
+              "Source": "DETAILS",
+              "FontName": "Arial",
+              "FontSize": 32,
+              "Foreground": "#C9A84C",
+              "MarginBottom": 10
+            },
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.Description}>",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#444444",
+              "Width": "*",
+              "TextOptions": { "Wrap": true }
+            }
+          ]
         },
         // Verdict paragraph
         {
-          "BlockType": "text",
-          "Source": "VERDICT",
-          "FontName": "Arial",
-          "FontSize": 32,
-          "Foreground": "#C9A84C",
-          "MarginBottom": 10
-        },
-        {
-          "BlockType": "text",
-          "Source": "<{Penalty.Verdict}>",
-          "FontName": "Arial",
-          "FontSize": 36,
-          "Foreground": "#444444",
+          "BlockType": "stack",
+          "Orientation": "Vertical",
           "Width": "*",
-          "TextOptions": { "Wrap": true }
+          "Items": [
+            {
+              "BlockType": "text",
+              "Source": "VERDICT",
+              "FontName": "Arial",
+              "FontSize": 32,
+              "Foreground": "#C9A84C",
+              "MarginBottom": 10
+            },
+            {
+              "BlockType": "text",
+              "Source": "<{Penalty.Verdict}>",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#444444",
+              "Width": "*",
+              "TextOptions": { "Wrap": true }
+            }
+          ]
         },
         { "BlockType": "stack", "Height": 40 }
       ]
