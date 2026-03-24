@@ -63,7 +63,7 @@
           "Source": "COMPETITOR: <{Penalty.Team.FullName}>",
           "FontName": "Arial",
           "FontSize": 36,
-          "Foreground": "#444444",
+          "Foreground": "#111111",
           "MarginBottom": 40
         },
         // Decision row
@@ -73,97 +73,35 @@
           "MarginBottom": 40,
           "Items": [
             {
-              "BlockType": "stack",
-              "Orientation": "Vertical",
-              "MarginRight": 40,
-              "Items": [
-                {
-                  "BlockType": "text",
-                  "Source": "DECISION",
-                  "FontName": "Arial",
-                  "FontSize": 32,
-                  "Foreground": "#C0132B",
-                  "MarginBottom": 10
-                },
-                {
-                  "BlockType": "text",
-                  "Source": "<{Penalty.Decision}>",
-                  "FontName": "Arial",
-                  "FontSize": 36,
-                  "Foreground": "#444444"
-                }
-              ]
-            },
-            {
-              "BlockType": "stack",
-              "Orientation": "Vertical",
-              "RenderIf": "<{Penalty.TimeSeconds, Converter=NumberIsNotZero}>",
-              "MarginRight": 40,
-              "Items": [
-                {
-                  "BlockType": "text",
-                  "Source": "TIME PENALTY",
-                  "FontName": "Arial",
-                  "FontSize": 32,
-                  "Foreground": "#C0132B",
-                  "MarginBottom": 10
-                },
-                {
-                  "BlockType": "text",
-                  "Source": "<{Penalty.TimeSeconds}>s",
-                  "FontName": "Arial",
-                  "FontSize": 36,
-                  "Foreground": "#444444"
-                }
-              ]
-            },
-            {
-              "BlockType": "stack",
-              "Orientation": "Vertical",
-              "RenderIf": "<{Penalty.FinancialPenalty, Converter=NumberIsNotZero}>",
-              "Items": [
-                {
-                  "BlockType": "text",
-                  "Source": "FINE",
-                  "FontName": "Arial",
-                  "FontSize": 32,
-                  "Foreground": "#C0132B",
-                  "MarginBottom": 10
-                },
-                {
-                  "BlockType": "text",
-                  "Source": "$<{Penalty.FinancialPenalty}>",
-                  "FontName": "Arial",
-                  "FontSize": 36,
-                  "Foreground": "#444444"
-                }
-              ]
-            }
-          ]
-        },
-        // Details paragraph
-        {
-          "BlockType": "stack",
-          "Orientation": "Vertical",
-          "Width": "*",
-          "MarginBottom": 40,
-          "Items": [
-            {
               "BlockType": "text",
-              "Source": "DETAILS",
-              "FontName": "Arial",
-              "FontSize": 32,
-              "Foreground": "#C9A84C",
-              "MarginBottom": 10
-            },
-            {
-              "BlockType": "text",
-              "Source": "<{Penalty.Description}>",
+              "Source": "DECISION: ",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#444444",
-              "Width": "*",
-              "TextOptions": { "Wrap": true }
+              "Foreground": "#C0132B"
+            },
+            {
+              "BlockType": "text",
+              "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
+              "Source": "\u2022 <{Penalty.PenaltySeconds}> SEC ",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
+            },
+            {
+              "BlockType": "text",
+              "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
+              "Source": "\u2022 <{Penalty.PenaltyPoints}> PTS ",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
+            },
+            {
+              "BlockType": "text",
+              "RenderIf": "<{Penalty.IsNoPunishment}>",
+              "Source": "NO FURTHER ACTION",
+              "FontName": "Arial",
+              "FontSize": 36,
+              "Foreground": "#000000"
             }
           ]
         },
@@ -186,13 +124,16 @@
               "Source": "<{Penalty.Verdict}>",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#444444",
+              "Foreground": "#C0132B",
               "Width": "*",
               "TextOptions": { "Wrap": true }
             }
           ]
         },
-        { "BlockType": "stack", "Height": 40 }
+        {
+          "BlockType": "stack",
+          "Height": 40
+        }
       ]
     }
   ]
