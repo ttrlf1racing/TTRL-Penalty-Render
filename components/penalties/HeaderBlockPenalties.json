@@ -1,14 +1,12 @@
 {
   "ComponentName": "HeaderBlockPenalties",
   "VerticalAlignment": "Center",
-  "HorizontalAlignment":"Center",
-  "MarginLeft": 10,
-  "MarginTop" : 25,
+  "HorizontalAlignment": "Center",
   "BlockType": "stack",
   "Orientation": "Horizontal",
   "Background": "#EEEEEE",
   "Width": "*",
-  "Padding": "20,20,20,20",
+  "Padding": "60,60,60,60",
   "Items": [
     //headerLeft
     {
@@ -16,7 +14,7 @@
       "Orientation": "Vertical",
       "Spacing": -10,
       "HorizontalAlignment": "Left",
-      "VerticalAlignment":"Center",
+      "VerticalAlignment": "Center",
       "Items": [
         {
           "Name": "FiA-logo",
@@ -33,7 +31,6 @@
       "BlockType": "stack",
       "Orientation": "Vertical",
       "Spacing": -10,
-      "MarginTop" :25,
       "Width": "*",
       "HorizontalAlignment": "Center",
       "Items": [
@@ -41,8 +38,8 @@
         {
           "BlockType": "stack",
           "VerticalAlignment": "Center",
-          "HorizontalAlignment" : "Center",
-          "MarginBottom" : 20,
+          "HorizontalAlignment": "Center",
+          "MarginBottom": 20,
           "Items": [
             {
               "BlockType": "image",
@@ -56,13 +53,13 @@
         {
           "BlockType": "stack",
           "VerticalAlignment": "Center",
-          "HorizontalAlignment" : "Center",
+          "HorizontalAlignment": "Center",
           "Items": [
             {
               "BlockType": "text",
               "FontSize": "{HeaderTrackFontSize}",
               "FontName": "{FIAFontBold}",
-              "Foreground": "<{Event.League.CategoryColour}>",
+              "Foreground": "{Season.MainLeagueCategory.Color}",
               "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]"
             }
           ]
@@ -75,8 +72,7 @@
       "Orientation": "Vertical",
       "Spacing": -10,
       "HorizontalAlignment": "Center",
-      "VerticalAlignment":"Center",
-      "MarginLeft" :10,
+      "VerticalAlignment": "Center",
       "Items": [
         {
           "Name": "f1-logo",
