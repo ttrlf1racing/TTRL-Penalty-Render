@@ -2,7 +2,6 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
         "Background": "#FFFFFF",
         "Orientation": "Vertical",
         "Items": [
