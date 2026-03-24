@@ -7,7 +7,7 @@
   "Items": [
     {
       "BlockType": "stack",
-      "Background": "#FFFFFF",
+      "Background": "#C0132B",
       "Padding": "80,80,80,80",
       "Orientation": "Vertical",
       "Items": [
@@ -26,10 +26,10 @@
           "Items": [
             {
               "BlockType": "text",
-              "Source": "DOCUMENT #<{Penalty.PenaltyId}>",
+              "Source": "DOCUMENT <{Penalty.PenaltyId}>",
               "FontName": "Arial",
               "FontSize": 36,
-              "Foreground": "#C9A84C"
+              "Foreground": "#C0132B"
             },
             {
               "BlockType": "text",
@@ -37,7 +37,8 @@
               "FontName": "Arial",
               "FontSize": 36,
               "Foreground": "#888888",
-              "HorizontalAlignment": "Right"
+              "HorizontalAlignment": "Right",
+              "MarginLeft": 40
             }
           ]
         },
@@ -80,7 +81,7 @@
                 },
                 {
                   "BlockType": "text",
-                  "Source": "#<{Penalty.Driver.RaceNumber}> <{Penalty.Driver.Name}>",
+                  "Source": "<{Penalty.Driver.Name}>",
                   "FontName": "Arial",
                   "FontSize": 36,
                   "Foreground": "#111111"
