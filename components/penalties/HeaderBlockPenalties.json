@@ -1,90 +1,90 @@
 {
-    "ComponentName": "HeaderBlockPenalties",
-    "VerticalAlignment": "Center",
-    "HorizontalAlignment":"Center",
-    "MarginLeft": 10,
-    "MarginTop" : 25,
-    "BlockType": "stack",
-    "Orientation": "Horizontal",
-    "Background": "#C0132B",
-    "Padding": "20,20,20,20",
-    "Items": [
-        //headerLeft
+  "ComponentName": "HeaderBlockPenalties",
+  "VerticalAlignment": "Center",
+  "HorizontalAlignment":"Center",
+  "MarginLeft": 10,
+  "MarginTop" : 25,
+  "BlockType": "stack",
+  "Orientation": "Horizontal",
+  "Background": "#EEEEEE",
+  "Padding": "20,20,20,20",
+  "Items": [
+    //headerLeft
+    {
+      "BlockType": "stack",
+      "Orientation": "Vertical",
+      "Spacing": -10,
+      "HorizontalAlignment": "Left",
+      "VerticalAlignment":"Center",
+      "Items": [
         {
-            "BlockType": "stack",
-            "Orientation": "Vertical",
-            "Spacing": -10,
-            "HorizontalAlignment": "Left",
-            "VerticalAlignment":"Center",
-            "Items": [
-                {
-                    "Name": "FiA-logo",
-                    "MarginBottom": 20,
-                    "BlockType": "image",
-                    "Height": "175",
-                    "HorizontalAlignment": "Center",
-                    "Source": "logotypes/FiA.png"
-                }
-            ]
-        },
-        //headerCenter
-        {
-            "BlockType": "stack",
-            "Orientation": "Vertical",
-            "Spacing": -10,
-            "MarginTop" :25,
-            "HorizontalAlignment": "Center",
-            "Items": [
-                //TTRL Logo
-                {
-                    "BlockType": "stack",
-                    "VerticalAlignment": "Center",
-                    "HorizontalAlignment" : "Center",
-                    "MarginBottom" : 20,
-                    "Items": [
-                        {
-                            "BlockType": "image",
-                            "Height": "120",
-                            "HorizontalAlignment": "Center",
-                            "Source": "TTRL.2025 .png"
-                        }
-                    ]
-                },
-                //second line - circuit name
-                {
-                    "BlockType": "stack",
-                    "VerticalAlignment": "Center",
-                    "HorizontalAlignment" : "Center",
-                    "Items": [
-                        {
-                            "BlockType": "text",
-                            "FontSize": 100,
-                            "FontName": "{FIAFontBold}",
-                            "Foreground": "#FFFFFF",
-                            "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]"
-                        }
-                    ]
-                }
-            ]
-        },
-        //headerRight
-        {
-            "BlockType": "stack",
-            "Orientation": "Vertical",
-            "Spacing": -10,
-            "HorizontalAlignment": "Center",
-            "VerticalAlignment":"Center",
-            "MarginLeft" :10,
-            "Items": [
-                {
-                    "Name": "f1-logo",
-                    "MarginBottom": 20,
-                    "BlockType": "image",
-                    "Height": "75",
-                    "HorizontalAlignment": "Right",
-                    "Source": "logotypes/f1_logo.png"
-                }
-            ]
+          "Name": "FiA-logo",
+          "MarginBottom": 20,
+          "BlockType": "image",
+          "Height": "175",
+          "HorizontalAlignment": "Center",
+          "Source": "logotypes/FiA.png"
         }
-    ]
+      ]
+    },
+    //headerCenter
+    {
+      "BlockType": "stack",
+      "Orientation": "Vertical",
+      "Spacing": -10,
+      "MarginTop" :25,
+      "HorizontalAlignment": "Center",
+      "Items": [
+        //TTRL Logo
+        {
+          "BlockType": "stack",
+          "VerticalAlignment": "Center",
+          "HorizontalAlignment" : "Center",
+          "MarginBottom" : 20,
+          "Items": [
+            {
+              "BlockType": "image",
+              "Height": "120",
+              "HorizontalAlignment": "Center",
+              "Source": "TTRL.2025 .png"
+            }
+          ]
+        },
+        //second line - circuit name
+        {
+          "BlockType": "stack",
+          "VerticalAlignment": "Center",
+          "HorizontalAlignment" : "Center",
+          "Items": [
+            {
+              "BlockType": "text",
+              "FontSize": 100,
+              "FontName": "{FIAFontBold}",
+              "Foreground": "#111111",
+              "Source": "[{Event.Track.CircuitName, Converter=StringToUpperString} GRAND PRIX]"
+            }
+          ]
+        }
+      ]
+    },
+    //headerRight
+    {
+      "BlockType": "stack",
+      "Orientation": "Vertical",
+      "Spacing": -10,
+      "HorizontalAlignment": "Center",
+      "VerticalAlignment":"Center",
+      "MarginLeft" :10,
+      "Items": [
+        {
+          "Name": "f1-logo",
+          "MarginBottom": 20,
+          "BlockType": "image",
+          "Height": "75",
+          "HorizontalAlignment": "Right",
+          "Source": "logotypes/f1_logo.png"
+        }
+      ]
+    }
+  ]
 }
