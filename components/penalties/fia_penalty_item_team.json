@@ -65,6 +65,7 @@
           "Foreground": "#444444",
           "MarginBottom": 40
         },
+        // Decision row
         {
           "BlockType": "stack",
           "Orientation": "Horizontal",
@@ -79,7 +80,7 @@
             },
             {
               "BlockType": "text",
-              "RenderIf": "{Penalty.PenaltySeconds, Converter=NotZero}",
+              "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
               "Source": "• <{Penalty.PenaltySeconds}> SEC ",
               "FontName": "Arial",
               "FontSize": 36,
@@ -87,15 +88,15 @@
             },
             {
               "BlockType": "text",
-              "RenderIf": "{Penalty.PenaltyPoints, Converter=NotZero}",
+              "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
               "Source": "• <{Penalty.PenaltyPoints}> PTS ",
               "FontName": "Arial",
               "FontSize": 36,
               "Foreground": "#000000"
             },
-            {Add fia_penalty_item_team component for team-specific penalties
+            {
               "BlockType": "text",
-              "RenderIf": "{Penalty.IsNoPunishment}",
+              "RenderIf": "<{Penalty.IsNoPunishment}>",
               "Source": "NO FURTHER ACTION",
               "FontName": "Arial",
               "FontSize": 36,
@@ -103,6 +104,7 @@
             }
           ]
         },
+        // Verdict paragraph
         {
           "BlockType": "text",
           "Source": "VERDICT",
@@ -117,13 +119,10 @@
           "FontName": "Arial",
           "FontSize": 36,
           "Foreground": "#444444",
-          "MaxWidth": 2800,
-          "TextOptions.Wrap": true
+          "Width": "*",
+          "TextOptions": { "Wrap": true }
         },
-        {
-          "BlockType": "stack",
-          "Height": 40
-        }
+        { "BlockType": "stack", "Height": 40 }
       ]
     }
   ]
