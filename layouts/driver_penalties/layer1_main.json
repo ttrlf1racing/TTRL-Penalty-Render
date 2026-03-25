@@ -1,33 +1,20 @@
 {
-    "BlockRoot": {
-        "Name": "mainStack",
-        "BlockType": "stack",
-        "Width": "*",
-        "Margin": "0, 0, 0, 0",
-        "Background": "#0D0D1A",
-        "Orientation": "Vertical",
-        "Items": [
-            {
-                "BlockType": "component",
-                "Component": "/Penalties/HeaderBlockPenalties"
-            },
-            {
-                "BlockType": "itemstack",
-                "Orientation": "Vertical",
-                "Spacing": 0,
-                "ItemStackOptions": {
-                    "ItemSource": "{Penalties.Penalties}",
-                    "ItemTemplate": {
-                        "BlockType": "component",
-                        "Component": "/Penalties/fia_penalty_item_driver",
-                        "ComponentOptions": {
-                            "Vars": {
-                                "Penalty": "Item"
-                            }
-                        }
-                    }
-                }
-            }
-        ]
-    }
+  "BlockRoot": {
+    "Name": "mainStack",
+    "BlockType": "stack",
+    "Margin": "24, 24, 24, 24",
+    "Background": "#ffffff",
+    "Orientation": "Vertical",
+    "Items": [
+      {
+        "BlockType": "component",
+        "ComponentName": "fia_penalty_item_driver",
+        "ComponentOptions": {
+          "Vars": {
+            "Penalty": "{Penalty}"
+          }
+        }
+      }
+    ]
+  }
 }
