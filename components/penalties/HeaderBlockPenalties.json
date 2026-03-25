@@ -69,6 +69,7 @@
     //headerRight
     {
       "BlockType": "stack",
+      "Background": "#C0132B",
       "Orientation": "Vertical",
       "Spacing": -10,
       "HorizontalAlignment": "Center",
