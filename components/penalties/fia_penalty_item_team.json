@@ -1,7 +1,6 @@
 {
   "ComponentName": "fia_penalty_item_team",
   "BlockType": "stack",
-      "Width": "*",
   "Padding": "0,0,0,0",
   "Orientation": "Vertical",
   "Spacing": 0,
@@ -10,7 +9,7 @@
       "BlockType": "stack",
       "Background": "#EEEEEE",
       "Padding": "60,60,60,60",
-            "Width": "*",
+      "Width": "*",
       "Orientation": "Vertical",
       "Items": [
         // Red Accent Bar
@@ -126,9 +125,11 @@
               "Source": "<{Penalty.Verdict}>",
               "FontName": "Arial",
               "FontSize": 36,
-                          "Foreground": "#000000",
+              "Foreground": "#000000",
               "Width": "*",
-              "TextOptions": { "Wrap": true }
+              "TextOptions": {
+                "Wrap": true
+              }
             }
           ]
         },
